@@ -1,0 +1,23 @@
+.surprise-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-alt);
+  color: var(--text);
+  border: none;
+  border-radius: 100px;
+  padding: 12px 22px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+  transition: filter 0.15s ease;
+}
+
+.surprise-button:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.surprise-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -1,0 +1,33 @@
+.watch-providers {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.watch-providers__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px 8px 8px;
+}
+
+.watch-providers__item img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.watch-providers__item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.watch-providers__empty {
+  color: var(--text-muted);
+}

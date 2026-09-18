@@ -3,8 +3,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 export const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
-// Função auxiliar: monta a URL final juntando a rota, a chave da API
-// e o idioma, e já retorna os dados em JSON.
+
 async function fetchFromTMDB(path, extraParams) {
   let url = BASE_URL + path + "?api_key=" + API_KEY + "&language=pt-BR";
 
@@ -24,19 +23,16 @@ async function fetchFromTMDB(path, extraParams) {
   return data;
 }
 
-// Trending da semana, para filmes (movie) ou séries (tv)
 export async function getTrending(mediaType) {
   const data = await fetchFromTMDB("/trending/" + mediaType + "/week");
   return data.results;
 }
 
-// Lista de gêneros disponíveis para o tipo de mídia
 export async function getGenres(mediaType) {
   const data = await fetchFromTMDB("/genre/" + mediaType + "/list");
   return data.genres;
 }
 
-// Descoberta filtrando por um ou mais gêneros
 export async function discoverByGenres(mediaType, genreIds) {
   const data = await fetchFromTMDB("/discover/" + mediaType, {
     with_genres: genreIds.join(","),
@@ -45,7 +41,6 @@ export async function discoverByGenres(mediaType, genreIds) {
   return data.results;
 }
 
-// Busca textual
 export async function searchMedia(mediaType, query) {
   const data = await fetchFromTMDB("/search/" + mediaType, {
     query: encodeURIComponent(query),
@@ -53,20 +48,16 @@ export async function searchMedia(mediaType, query) {
   return data.results;
 }
 
-// Detalhes de um título específico
 export async function getDetails(mediaType, id) {
   const data = await fetchFromTMDB("/" + mediaType + "/" + id);
   return data;
 }
 
-// Extrai o ano de lançamento/estreia de um item da TMDB (filme ou série),
-// para exibir como linha secundária no MediaCard (referência: YouTube).
 export function getReleaseYear(item) {
   const date = item.release_date || item.first_air_date;
   return date ? date.slice(0, 4) : null;
 }
 
-// Onde assistir (watch providers) — usa a região BR
 export async function getWatchProviders(mediaType, id) {
   const data = await fetchFromTMDB("/" + mediaType + "/" + id + "/watch/providers");
 

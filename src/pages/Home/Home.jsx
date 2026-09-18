@@ -10,8 +10,6 @@ const Home = () => {
   const [status, setStatus] = useState("loading");
   const [retryCount, setRetryCount] = useState(0);
 
-  // Toda vez que o tipo de mídia mudar (ou o retry for clicado), o efeito
-  // roda de novo: liga o loading, busca os dados e atualiza o estado.
   useEffect(() => {
     setStatus("loading");
 

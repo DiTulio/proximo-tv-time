@@ -1,5 +1,3 @@
-// Mapeia "moods" (estados de espírito) para IDs de gênero da TMDB.
-// IDs de gênero são os mesmos para movie e tv na maioria dos casos relevantes aqui.
 export const MOODS = [
   { id: "rir", label: "Quero rir", genreIds: [35] }, // Comédia
   { id: "chorar", label: "Quero chorar", genreIds: [18] }, // Drama

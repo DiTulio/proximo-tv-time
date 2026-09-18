@@ -1,8 +1,6 @@
 import { Loader2, SearchX, TriangleAlert } from "lucide-react";
 import "./StateFeedback.css";
 
-// Componente genérico para os estados de loading / empty / error.
-// Recebido via props pelas páginas que consomem a API.
 const StateFeedback = ({ state, message, onRetry }) => {
   if (state === "loading") {
     return (

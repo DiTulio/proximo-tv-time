@@ -1,7 +1,6 @@
 import { Search } from "lucide-react";
 import "./SearchBar.css";
 
-// Barra de busca controlada pelo componente pai (página Search).
 const SearchBar = ({ value, onChange, placeholder }) => {
   return (
     <div className="search-bar">

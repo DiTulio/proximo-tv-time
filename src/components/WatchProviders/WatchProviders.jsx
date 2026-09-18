@@ -1,8 +1,6 @@
 import { IMAGE_BASE } from "../../api/tmdb";
 import "./WatchProviders.css";
 
-// Exibe os serviços de streaming onde o título está disponível.
-// Se a lista vier vazia, mostra mensagem de indisponibilidade (regra do produto).
 const WatchProviders = ({ providers }) => {
   if (!providers || providers.length === 0) {
     return (

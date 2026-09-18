@@ -1,6 +1,5 @@
 import { MOODS } from "../../utils/moodMap";
 
-// Lista de chips de "mood" (humor), baseada no mapeamento fixo em utils/moodMap.js
 const MoodFilter = ({ selectedMood, onSelect }) => {
   return (
     <div className="chip-row">

@@ -3,8 +3,6 @@ import { Star, ImageOff } from "lucide-react";
 import { IMAGE_BASE } from "../../api/tmdb";
 import "./MediaCard.css";
 
-// Card de filme/série. Recebe os dados via props e monta o link
-// para a rota dinâmica de detalhes /titulo/:mediaType/:id
 const MediaCard = ({ id, title, posterPath, voteAverage, mediaType, year }) => {
   return (
     <Link to={`/titulo/${mediaType}/${id}`} className="media-card">

@@ -12,8 +12,6 @@ const Search = () => {
   const [status, setStatus] = useState("idle");
   const [retryCount, setRetryCount] = useState(0);
 
-  // Busca de novo sempre que o texto, o tipo de mídia ou o retry mudarem.
-  // Com menos de 2 letras, volta pro estado "idle" (nada buscado ainda).
   useEffect(() => {
     if (query.trim().length < 2) {
       setStatus("idle");

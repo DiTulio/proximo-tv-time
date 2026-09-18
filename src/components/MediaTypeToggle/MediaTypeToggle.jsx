@@ -1,7 +1,6 @@
 import { Film, Tv } from "lucide-react";
 import "./MediaTypeToggle.css";
 
-// Alterna entre "movie" e "tv". Totalmente controlado pelo componente pai.
 const MediaTypeToggle = ({ value, onChange }) => {
   return (
     <div className="media-type-toggle">

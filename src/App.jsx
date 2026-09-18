@@ -6,8 +6,6 @@ import Search from "./pages/Search/Search";
 import MediaDetails from "./pages/MediaDetails/MediaDetails";
 import NotFound from "./pages/NotFound/NotFound";
 
-// Rotas simples (sem layout compartilhado/Outlet): cada página já
-// renderiza o próprio <Header /> no topo.
 const router = createBrowserRouter([
   { path: "/", element: <Home />, errorElement: <NotFound /> },
   { path: "descobrir", element: <Discover /> },

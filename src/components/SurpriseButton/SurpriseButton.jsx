@@ -3,8 +3,6 @@ import { useNavigate } from "react-router";
 import { Shuffle } from "lucide-react";
 import "./SurpriseButton.css";
 
-// Sorteia um item da lista de candidatos e navega para seus detalhes.
-// Guarda o último id sorteado em estado local para evitar repetição.
 const SurpriseButton = ({ candidates, mediaType, disabled }) => {
   const [lastPickedId, setLastPickedId] = useState(null);
   const navigate = useNavigate();

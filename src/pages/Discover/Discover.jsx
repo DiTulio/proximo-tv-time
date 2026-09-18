@@ -8,8 +8,6 @@ import MoodFilter from "../../components/MoodFilter/MoodFilter";
 import SurpriseButton from "../../components/SurpriseButton/SurpriseButton";
 import MediaGrid from "../../components/MediaGrid/MediaGrid";
 
-// Junta o gênero selecionado diretamente com os gêneros do mood escolhido,
-// sem repetir nenhum id, usando só array (sem Set).
 function buildGenreIdList(selectedGenreId, selectedMood, genres) {
   const ids = [];
 
@@ -24,7 +22,6 @@ function buildGenreIdList(selectedGenreId, selectedMood, genres) {
     }
   }
 
-  // Sem filtro nenhum -> usa os 3 primeiros gêneros da lista como fallback
   if (ids.length === 0 && genres.length > 0) {
     for (let i = 0; i < 3 && i < genres.length; i++) {
       ids.push(genres[i].id);
@@ -51,14 +48,12 @@ const Discover = () => {
 
   const handleRetry = () => setRetryCount((c) => c + 1);
 
-  // Carrega a lista de gêneros sempre que o tipo de mídia mudar
   useEffect(() => {
     getGenres(mediaType)
       .then((data) => setGenres(data))
       .catch(() => setGenres([]));
   }, [mediaType]);
 
-  // Busca títulos combinando gênero selecionado diretamente + gêneros do mood
   useEffect(() => {
     const idsToUse = buildGenreIdList(selectedGenreId, selectedMood, genres);
 

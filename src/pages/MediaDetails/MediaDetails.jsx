@@ -15,7 +15,6 @@ const MediaDetails = () => {
   const [status, setStatus] = useState("loading");
   const [retryCount, setRetryCount] = useState(0);
 
-  // Roda de novo sempre que o título (type/id) mudar ou o retry for clicado.
   useEffect(() => {
     setStatus("loading");
 

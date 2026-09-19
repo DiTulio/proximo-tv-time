@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header__inner">
         <NavLink to="/" className="header__logo">
           <Clapperboard size={22} />
-          <span>próximo.</span>
+          <span>TV Time</span>
         </NavLink>
         <nav className="header__nav">
           <NavLink to="/" end className={({ isActive }) => (isActive ? "is-active" : "")}>
